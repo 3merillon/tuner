@@ -1,37 +1,73 @@
+<!--
+Copyright (c) 2022 Qiu Xiang <xiang.qiu@qq.com>
+Copyright (c) 2024 Cyril Monkewitz <cyril.monkewitz@gmail.com> (modifications)
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,user-scalable=no"
-    />
-    <title>Online Tuner</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>Temperament Tuner</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+<body>
     <canvas class="frequency-bars"></canvas>
     <div class="meter">
-      <div class="meter-dot"></div>
-      <div class="meter-pointer"></div>
+        <div class="meter-dot"></div>
+        <div class="meter-pointer"></div>
     </div>
     <div class="notes">
-      <div class="notes-list"></div>
-      <div class="frequency">
-        <span>Hz</span>
-      </div>
+        <div class="notes-list"></div>
+        <div class="frequency">
+            <span>Hz</span>
+        </div>
     </div>
-    <div class="a4">A<sub>4</sub> = <span>440</span> Hz</div>
+    <div class="a4">A<sub>4</sub> = <span>442</span> Hz</div>
     <label class="auto">
-      Auto
-      <input type="checkbox" checked />
+        Auto
+        <input type="checkbox" checked />
     </label>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <div id="toggle">
+        Temp^
+    </div>
+
+    <table id="dropdown">
+        <thead>
+            <tr>
+                <th>Note</th>
+                <th>Function</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody id="custom-note-functions"></tbody>
+    </table>
+
+    <div id="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/aubiojs@0.1.1/build/aubio.min.js"></script>
     <script src="tuner.js"></script>
     <script src="meter.js"></script>
     <script src="frequency-bars.js"></script>
     <script src="notes.js"></script>
     <script src="app.js"></script>
-  </body>
+</body>
 </html>
